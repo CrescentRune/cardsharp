@@ -1,15 +1,29 @@
-<p>
+<p class="app-header">
   <mat-toolbar color="primary">
     <button mat-icon-button aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <span>Cardsharp</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <span class="middle-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>bookmark</mat-icon>
     </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon>share</mat-icon>
     </button>
   </mat-toolbar>
+  <mat-menu #menu="matMenu" xPosition="after">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
 </p>
